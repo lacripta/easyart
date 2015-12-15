@@ -1,0 +1,136 @@
+body{
+    background-image: url(/easyart/img/bg/Image00042.png);
+}
+.carousel{
+    margin: 1em;
+}
+.img-responsive{
+    margin: 1em;
+    -webkit-box-shadow:rgb(0, 0, 0) 0px 0px 35px -2px;
+    -moz-box-shadow:rgb(0, 0, 0) 0px 0px 35px -2px;
+    box-shadow:rgb(0, 0, 0) 0px 0px 35px -2px;
+}
+.cart{
+    font-size: 4em;
+}
+.home-category-title-container { clear:left; margin: 20px 0 0 -29px; background:transparent url(../img/home_category_left_bg.png) no-repeat; position:relative; height:38px; }
+.home-category-title-container span, .category-title-container span { display:block; margin: 0 0 0 13px; background:transparent url(http://www.mrwonderfulshop.es/skin/frontend/clean/default/images/home_category_bg.png) repeat-x; position:relative; height:30px; }
+.home-category-title { position:absolute; left:0; top:0; margin:0;  background: transparent url(../img/home_category_right_bg.png) no-repeat top right; font-size: 22px; line-height:30px; color:#fff; }
+.home-category-title span {padding:0 15px; margin: 0 13px 0 0; display:block; background:#00ba9c; font-size:22px; line-height:30px; }
+.botones-sociales {
+    position: fixed;
+    top: 130px;
+    width: 45px;
+    z-index: 9999;
+}
+.izquierda {
+    left: 0;
+}
+.derecha{
+    right: 0;
+}
+.botones-sociales #twitter-btn .social,
+.botones-sociales #facebook-btn .social,
+.botones-sociales #google-btn .social,
+.botones-sociales #rss-btn .social,
+.botones-sociales #pinterest-btn .social,
+.botones-sociales #youtube-btn .social {
+    background-color: #33353B;
+    background-image: url(mas-icons.png);
+}
+.izquierda #facebook-btn span {
+    background-position: right 10px;
+}
+.izquierda #twitter-btn span {
+    background-position: right -35px;
+}
+.izquierda #google-btn span {
+    background-position: right -127px;
+}
+.izquierda #rss-btn span {
+    background-position: right -80px;
+}
+.izquierda #pinterest-btn span {
+    background-position: 11px -177px;
+}
+.izquierda #youtube-btn span {
+    background-position: 11px -223px;
+}
+.derecha #facebook-btn span {
+    background-position: 12px 10px;
+}
+.derecha #twitter-btn span {
+    background-position: 11px -35px;
+}
+.derecha #google-btn span {
+    background-position: 10px -127px;
+}
+.derecha #rss-btn span {
+    background-position: 11px -80px;
+}
+.derecha #pinterest-btn span {
+    background-position: 11px -177px;
+}
+.derecha #youtube-btn span {
+    background-position: 11px -223px;
+}
+.botones-sociales #facebook-btn:hover .social {
+    background-color: #3B5998;
+}
+.botones-sociales #twitter-btn:hover .social {
+    background-color: #62BDB2;
+}
+.botones-sociales #google-btn:hover .social {
+    background-color: #DB4A39;
+}
+.botones-sociales #rss-btn:hover .social {
+    background-color: #FF8B0F;
+}
+.botones-sociales #pinterest-btn:hover .social {
+    background-color: #D43638;
+}
+.botones-sociales #youtube-btn:hover .social {
+    background-color: #C4302B;
+}
+.botones-sociales a:hover .texto{
+    display: block;
+}
+.izquierda .social {
+    -moz-transition: background-color 0.4s ease-in 0s;
+    -webkit-transition: background-color 0.4s ease-in 0s;
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    height: 43px;
+    margin-bottom: 2px;
+    width: 43px;}
+
+.izquierda .texto{
+    display: none;
+    float: right;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 11px 40px 11px 0px;
+    white-space: nowrap;
+}
+.derecha .social {
+    -moz-transition: background-color 0.4s ease-in 0s;
+    -webkit-transition: background-color 0.4s ease-in 0s;
+    background-repeat: no-repeat;
+    display: block;
+    float: right;
+    height: 43px;
+    margin-bottom: 2px;
+    width: 43px;}
+
+.derecha .texto {
+    display: none;
+    float: left;
+    font-size: 1.3em;
+    font-weight: lighter;
+    margin: 11px 0 11px 40px;
+    white-space: nowrap;
+}
+.botones-sociales .texto{
+    color: #FFFFFF;
+}
