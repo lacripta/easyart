@@ -1,136 +1,44 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <!-- Material Design fonts -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <!-- Bootstrap Material Design -->
-        <link href="css/bootstrap-material-design.css" rel="stylesheet">
-        <link href="css/ripples.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-        <title></title>
-    </head>
-    <body class="container">
-        <?php include_once './templates/header.php'; ?>
-        <?php include_once './templates/jcart_modal.php'; ?>
-        <?php include_once './templates/carrusel.php'; ?>
-        <div class="container-fluid">
-            <div class="col-sm-4"><a href="#"><img src="img/cateorias_navidad_amigo_invisible.jpg" class="img-responsive img-rounded"></a></div>
-            <div class="col-sm-4"><a href="#"><img src="img/cateorias_navidad_amigos_1_.jpg" class="img-responsive img-rounded"></a></div>
-            <div class="col-sm-4"><a href="#"><img src="img/cateorias_navidad_amorcete_1_.jpg" class="img-responsive img-rounded"></a></div>
-            <div class="col-sm-4"><a href="#"><img src="img/cateorias_navidad_familia_1_.jpg" class="img-responsive img-rounded"></a></div>
-            <div class="col-sm-4"><a href="#"><img src="img/cateorias_navidad_mama.jpg" class="img-responsive img-rounded"></a></div>
-            <div class="col-sm-4"><a href="#"><img src="img/cateorias_navidad_papa.jpg" class="img-responsive img-rounded"></a></div>
-        </div>
-        <div class="col-sm-12">
-            <div class="row well">
-                <div class="home-category-title-container">
-                    <span>
-                        <h2 class="home-category-title">
-                            <span>Lo más Vendido</span>
-                        </h2>
-                    </span>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img class="" alt="Bootstrap Thumbnail First" src="img/mrownderful_8436547194674_taza_madre-primeriza-feliz-y-con-sueno-3.jpg" width="100%">
-                        <div class="caption">
-                            <p>
-                                Cras justo odio<br>
-                                <button class="btn btn-primary">Mas Información</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img class="" alt="Bootstrap Thumbnail First" src="img/mrownderful_8436547194674_taza_madre-primeriza-feliz-y-con-sueno-3.jpg" width="100%">
-                        <div class="caption">
-                            <p>
-                                Cras justo odio<br>
-                                <button class="btn btn-primary">Mas Información</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img class="" alt="Bootstrap Thumbnail First" src="img/mrownderful_8436547194674_taza_madre-primeriza-feliz-y-con-sueno-3.jpg" width="100%">
-                        <div class="caption">
-                            <p>
-                                Cras justo odio<br>
-                                <button class="btn btn-primary">Mas Información</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img class="" alt="Bootstrap Thumbnail First" src="img/mrownderful_8436547194674_taza_madre-primeriza-feliz-y-con-sueno-3.jpg" width="100%">
-                        <div class="caption">
-                            <p>
-                                Cras justo odio<br>
-                                <button class="btn btn-primary">Mas Información</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+<html lang="en">
+    <?php include_once './templates/nuevos/header.php'; ?>
 
-                <div class="home-category-title-container">
-                    <span><h2 class="home-category-title">
-                            <span>Articulos Destacados</span>
-                        </h2></span>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img class="" alt="Bootstrap Thumbnail First" src="img/mrownderful_8436547194674_taza_madre-primeriza-feliz-y-con-sueno-3.jpg" width="100%">
-                        <div class="caption">
-                            <p>
-                                Cras justo odio<br>
-                                <button class="btn btn-primary">Mas Información</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img class="" alt="Bootstrap Thumbnail First" src="img/mrownderful_8436547194674_taza_madre-primeriza-feliz-y-con-sueno-3.jpg" width="100%">
-                        <div class="caption">
-                            <p>
-                                Cras justo odio<br>
-                                <button class="btn btn-primary">Mas Información</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img class="" alt="Bootstrap Thumbnail First" src="img/mrownderful_8436547194674_taza_madre-primeriza-feliz-y-con-sueno-3.jpg" width="100%">
-                        <div class="caption">
-                            <p>
-                                Cras justo odio<br>
-                                <button class="btn btn-primary">Mas Información</button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img class="" alt="Bootstrap Thumbnail First" src="img/mrownderful_8436547194674_taza_madre-primeriza-feliz-y-con-sueno-3.jpg" width="100%">
-                        <div class="caption">
-                            <p>
-                                Cras justo odio<br>
-                                <button class="btn btn-primary">Mas Información</button>
-                            </p>
-                        </div>
-                    </div>
+
+    <div class="container">
+        <?php include_once './templates/nuevos/carrusel.php'; ?>
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Build a website
+                        <strong>worth visiting</strong>
+                    </h2>
+                    <hr>
+                    <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt="">
+                    <hr class="visible-xs">
+                    <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
+                    <p>A huge thanks to <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                 </div>
             </div>
         </div>
-        <?php include_once './templates/footer.php'; ?>
-    </body>
-</html>
 
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Beautiful boxes
+                        <strong>to showcase your content</strong>
+                    </h2>
+                    <hr>
+                    <p>Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <?php include_once './templates/nuevos/footer.php'; ?>
+
+</html>
