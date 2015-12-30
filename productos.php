@@ -28,7 +28,12 @@
                 </div>
             </div>
         </div>
-
+        <div class="modal fade" id="imagen_modal" tabindex="-1" role="dialog" aria-labelledby="imagen_modalLabel">
+            <div class="modal-dialog" role="document">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: #fff;"><b>&times;</b></span></button>
+                <img id="vista" width="100%">
+            </div>
+        </div>
     </div>
     <script id="categorias-template" type="text/x-handlebars-template">
         <div class="list-group">
@@ -74,7 +79,7 @@
     <script id="detalles-template" type="text/x-handlebars-template">
         <div class="col-md-12 box">
         <div class="thumbnail col-md-5">
-        <img src="{{producto_imagen}}" alt="{{producto_imagen_titulo}}" class="img-responsive" style="height:100%;">
+        <img src="{{producto_imagen}}" alt="{{producto_imagen_titulo}}" class="img-responsive" style="height:100%;"  onclick="imagen('{{producto_imagen}}')">
         </div>
         <div class="thumbnail col-md-6 pull-right">
         <div class="caption-full">
@@ -87,12 +92,16 @@
         </div>
         </div>
         {{#each imagenes}}
-        <img class="img-responsive col-sm-2 thumbnail" src="{{producto_imagen_url}}" alt="{{producto_imagen_titulo}}" class="img-responsive">
+        <img class="img-responsive col-sm-2 thumbnail" src="{{producto_imagen_url}}" alt="{{producto_imagen_titulo}}" class="img-responsive" onclick="imagen('{{producto_imagen_url}}')">
         {{/each}}
     </script>
     <!-- /.container -->
     <?php include_once './templates/nuevos/footer.php'; ?>
     <script>
+        function imagen(url) {
+            $("#vista").attr("src", url);
+            $('#imagen_modal').modal('show')
+        }
         var productos_breadcrumbs = {
             categoria: '',
             categoria_visible: false,
