@@ -1,15 +1,119 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+/*ELEMENTOS DE LA PAGINA ABOUT*/
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,300);
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+.boton {
+    background:none!important;
+    border:none;
+    padding:0!important;
+    font: inherit;
+    /*border is optional*/
+    cursor: pointer;
+    color: #88C425;
+}
+.team{
+    padding:75px 0;
+}
+h6.description{
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #999;
+    border-bottom: 1px solid rgba(0, 0, 0,0.1);
+    padding-bottom: 5px;
+}
+.profile{
+    margin-top: 25px;
+}
+.profile h1{
+    font-weight: normal;
+    font-size: 20px;
+    margin:10px 0 0 0;
+}
+.profile h2{
+    font-size: 14px;
+    font-weight: lighter;
+    margin-top: 5px;
+}
+.profile .img-box{
+    opacity: 1;
+    display: block;
+    position: relative;
+}
+.profile .img-box:after{
+    content:"";
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+.img-box ul{
+    position: absolute;
+    z-index: 2;
+    bottom: 50px;
+    text-align: center;
+    width: 100%;
+    padding-left: 0px;
+    height: 0px;
+    margin:0px;
+    opacity: 0;
+}
+.profile .img-box:after, .img-box ul, .img-box ul li{
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+}
+.img-box ul i{
+    font-size: 20px;
+    letter-spacing: 10px;
+}
+.img-box ul li{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #88C425;
+    margin: 2px;
+    padding: 5px;
+    display: inline-block;
+}
+.img-box a{
+    color:#fff;
+}
+.img-box:hover:after{
+    opacity: 1;
+}
+.img-box:hover ul{
+    opacity: 1;
+}
+.img-box ul a{
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+.img-box a:hover li{
+    border-color: #fff;
+    color: #88C425;
+}
+
+a:hover{
+    text-decoration:none;
+    color:#519548;
+}
+i.red{
+    color:#BC0213;
+}
+/*ELEMENTOS DE LA PAGINA*/
 body{
     background-image: url(/easyart/img/bg/Image00042.png);
 }
 .carousel{
     margin: 1em;
 }
-.img-responsive{
-    margin: 1em;
-    -webkit-box-shadow:rgb(0, 0, 0) 0px 0px 35px -2px;
-    -moz-box-shadow:rgb(0, 0, 0) 0px 0px 35px -2px;
-    box-shadow:rgb(0, 0, 0) 0px 0px 35px -2px;
-}
+
 .cart{
     font-size: 4em;
 }
@@ -17,6 +121,7 @@ body{
 .home-category-title-container span, .category-title-container span { display:block; margin: 0 0 0 13px; background:transparent url(http://www.mrwonderfulshop.es/skin/frontend/clean/default/images/home_category_bg.png) repeat-x; position:relative; height:30px; }
 .home-category-title { position:absolute; left:0; top:0; margin:0;  background: transparent url(../img/home_category_right_bg.png) no-repeat top right; font-size: 22px; line-height:30px; color:#fff; }
 .home-category-title span {padding:0 15px; margin: 0 13px 0 0; display:block; background:#00ba9c; font-size:22px; line-height:30px; }
+/*ELEMENTOS DE LOS BOTONES SOCIALES*/
 .botones-sociales {
     position: fixed;
     top: 130px;
@@ -133,4 +238,108 @@ body{
 }
 .botones-sociales .texto{
     color: #FFFFFF;
+}
+/*ELEMENTOS DE LA GALERIA DE PRODUCTOS*/
+.col-item
+{
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    background: #FFF;
+}
+.col-item .photo img
+{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.col-item .info
+{
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 1px;
+}
+
+.col-item:hover .info {
+    background-color: #F5F5DC;
+}
+.col-item .price
+{
+    /*width: 50%;*/
+    float: left;
+    margin-top: 5px;
+}
+
+.col-item .price h5
+{
+    line-height: 20px;
+    margin: 0;
+}
+
+.price-text-color
+{
+    color: #219FD1;
+}
+
+.col-item .info .rating
+{
+    color: #777;
+}
+
+.col-item .rating
+{
+    /*width: 50%;*/
+    float: left;
+    font-size: 17px;
+    text-align: right;
+    line-height: 52px;
+    margin-bottom: 10px;
+    height: 52px;
+}
+
+.col-item .separator
+{
+    border-top: 1px solid #E1E1E1;
+}
+
+.clear-left
+{
+    clear: left;
+}
+
+.col-item .separator p
+{
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.col-item .separator p i
+{
+    margin-right: 5px;
+}
+.col-item .btn-add
+{
+    width: 50%;
+    float: left;
+}
+
+.col-item .btn-add
+{
+    border-right: 1px solid #E1E1E1;
+}
+
+.col-item .btn-details
+{
+    width: 50%;
+    float: left;
+    padding-left: 10px;
+}
+.controls
+{
+    margin-top: 20px;
+}
+[data-slide="prev"]
+{
+    margin-right: 10px;
 }

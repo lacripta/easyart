@@ -68,3 +68,9 @@
         </div>
         <!-- /.container -->
     </nav>
+    <div class='botones-sociales derecha'>
+        <a class='itemsocial' href='<?= $facebook ?>' id='facebook-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
+        <a class='itemsocial' href='<?= $twitter ?>' id='twitter-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
+        <a class='itemsocial' href='<?= $youtube ?>' id='youtube-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
+        <a class='itemsocial' href='<?= $pinterest ?>' id='pinterest-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
+    </div>

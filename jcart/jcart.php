@@ -4,8 +4,7 @@
 // http://conceptlogic.com/jcart/
 //error_reporting(E_ALL);
 // Cart logic based on Webforce Cart: http://www.webforcecart.com/
-class Jcart
-{
+class Jcart {
 
     public $config = array();
     private $items = array();
@@ -16,8 +15,7 @@ class Jcart
     private $subtotal = 0;
     private $itemCount = 0;
 
-    function __construct()
-    {
+    function __construct() {
 
         // Get $config array
         include_once('config-loader.php');
@@ -29,11 +27,9 @@ class Jcart
      *
      * @return array
      */
-    public function get_contents()
-    {
+    public function get_contents() {
         $items = array();
-        foreach ($this->items as $tmpItem)
-        {
+        foreach ($this->items as $tmpItem) {
             $item = null;
             $item['id'] = $tmpItem;
             $item['name'] = $this->names[$tmpItem];
@@ -57,42 +53,35 @@ class Jcart
      *
      * @return mixed
      */
-    private function add_item($id, $name, $price, $qty = 1, $url)
-    {
+    private function add_item($id, $name, $price, $qty = 1, $url) {
 
         $validPrice = false;
         $validQty = false;
 
         // Verify the price is numeric
-        if (is_numeric($price))
-        {
+        if (is_numeric($price)) {
             $validPrice = true;
         }
 
         // If decimal quantities are enabled, verify the quantity is a positive float
-        if ($this->config['decimalQtys'] === true && filter_var($qty, FILTER_VALIDATE_FLOAT) && $qty > 0)
-        {
+        if ($this->config['decimalQtys'] === true && filter_var($qty, FILTER_VALIDATE_FLOAT) && $qty > 0) {
             $validQty = true;
         }
         // By default, verify the quantity is a positive integer
-        elseif (filter_var($qty, FILTER_VALIDATE_INT) && $qty > 0)
-        {
+        elseif (filter_var($qty, FILTER_VALIDATE_INT) && $qty > 0) {
             $validQty = true;
         }
 
         // Add the item
-        if ($validPrice !== false && $validQty !== false)
-        {
+        if ($validPrice !== false && $validQty !== false) {
 
             // If the item is already in the cart, increase its quantity
-            if ($this->qtys[$id] > 0)
-            {
+            if ($this->qtys[$id] > 0) {
                 $this->qtys[$id] += $qty;
                 $this->update_subtotal();
             }
             // This is a new item
-            else
-            {
+            else {
                 $this->items[] = $id;
                 $this->names[$id] = $name;
                 $this->prices[$id] = $price;
@@ -101,14 +90,10 @@ class Jcart
             }
             $this->update_subtotal();
             return true;
-        }
-        elseif ($validPrice !== true)
-        {
+        } elseif ($validPrice !== true) {
             $errorType = 'price';
             return $errorType;
-        }
-        elseif ($validQty !== true)
-        {
+        } elseif ($validQty !== true) {
             $errorType = 'qty';
             return $errorType;
         }
@@ -122,34 +107,26 @@ class Jcart
      *
      * @return boolean
      */
-    private function update_item($id, $qty)
-    {
+    private function update_item($id, $qty) {
 
         // If the quantity is zero, no futher validation is required
-        if ((int) $qty === 0)
-        {
+        if ((int) $qty === 0) {
             $validQty = true;
         }
         // If decimal quantities are enabled, verify it's a float
-        elseif ($this->config['decimalQtys'] === true && filter_var($qty, FILTER_VALIDATE_FLOAT))
-        {
+        elseif ($this->config['decimalQtys'] === true && filter_var($qty, FILTER_VALIDATE_FLOAT)) {
             $validQty = true;
         }
         // By default, verify the quantity is an integer
-        elseif (filter_var($qty, FILTER_VALIDATE_INT))
-        {
+        elseif (filter_var($qty, FILTER_VALIDATE_INT)) {
             $validQty = true;
         }
 
         // If it's a valid quantity, remove or update as necessary
-        if ($validQty === true)
-        {
-            if ($qty < 1)
-            {
+        if ($validQty === true) {
+            if ($qty < 1) {
                 $this->remove_item($id);
-            }
-            else
-            {
+            } else {
                 $this->qtys[$id] = $qty;
             }
             $this->update_subtotal();
@@ -172,8 +149,7 @@ class Jcart
      *
      * @param string $id	*
      */
-    private function remove_item($id)
-    {
+    private function remove_item($id) {
         $tmpItems = array();
 
         unset($this->names[$id]);
@@ -182,10 +158,8 @@ class Jcart
         unset($this->urls[$id]);
 
         // Rebuild the items array, excluding the id we just removed
-        foreach ($this->items as $item)
-        {
-            if ($item != $id)
-            {
+        foreach ($this->items as $item) {
+            if ($item != $id) {
                 $tmpItems[] = $item;
             }
         }
@@ -196,8 +170,7 @@ class Jcart
     /**
      * Empty the cart
      */
-    public function empty_cart()
-    {
+    public function empty_cart() {
         $this->items = array();
         $this->names = array();
         $this->prices = array();
@@ -210,51 +183,41 @@ class Jcart
     /**
      * Update the entire cart
      */
-    public function update_cart()
-    {
+    public function update_cart() {
 
         // Post value is an array of all item quantities in the cart
         // Treat array as a string for validation
-        if (is_array($_POST['jcartItemQty']))
-        {
+        if (is_array($_POST['jcartItemQty'])) {
             $qtys = implode($_POST['jcartItemQty']);
         }
 
         // If no item ids, the cart is empty
-        if ($_POST['jcartItemId'])
-        {
+        if ($_POST['jcartItemId']) {
 
             $validQtys = false;
 
             // If decimal quantities are enabled, verify the combined string only contain digits and decimal points
-            if ($this->config['decimalQtys'] === true && preg_match("/^[0-9.]+$/i", $qtys))
-            {
+            if ($this->config['decimalQtys'] === true && preg_match("/^[0-9.]+$/i", $qtys)) {
                 $validQtys = true;
             }
             // By default, verify the string only contains integers
-            elseif (filter_var($qtys, FILTER_VALIDATE_INT) || $qtys == '')
-            {
+            elseif (filter_var($qtys, FILTER_VALIDATE_INT) || $qtys == '') {
                 $validQtys = true;
             }
 
-            if ($validQtys === true)
-            {
+            if ($validQtys === true) {
 
                 // The item index
                 $count = 0;
 
                 // For each item in the cart, remove or update as necessary
-                foreach ($_POST['jcartItemId'] as $id)
-                {
+                foreach ($_POST['jcartItemId'] as $id) {
 
                     $qty = $_POST['jcartItemQty'][$count];
 
-                    if ($qty < 1)
-                    {
+                    if ($qty < 1) {
                         $this->remove_item($id);
-                    }
-                    else
-                    {
+                    } else {
                         $this->update_item($id, $qty);
                     }
 
@@ -265,8 +228,7 @@ class Jcart
             }
         }
         // If no items in the cart, return true to prevent unnecssary error message
-        elseif (!$_POST['jcartItemId'])
-        {
+        elseif (!$_POST['jcartItemId']) {
             return true;
         }
     }
@@ -274,15 +236,12 @@ class Jcart
     /**
      * Recalculate subtotal
      */
-    private function update_subtotal()
-    {
+    private function update_subtotal() {
         $this->itemCount = 0;
         $this->subtotal = 0;
 
-        if (sizeof($this->items > 0))
-        {
-            foreach ($this->items as $item)
-            {
+        if (sizeof($this->items > 0)) {
+            foreach ($this->items as $item) {
                 $this->subtotal += ($this->qtys[$item] * $this->prices[$item]);
 
                 // Total number of items
@@ -294,8 +253,7 @@ class Jcart
     /**
      * Process and display cart
      */
-    public function display_cart()
-    {
+    public function display_cart() {
 
         $config = $this->config;
         $errorMessage = null;
@@ -323,13 +281,11 @@ class Jcart
         $jcartToken = $_POST['jcartToken'];
 
         // Only generate unique token once per session
-        if (!$_SESSION['jcartToken'])
-        {
+        if (!$_SESSION['jcartToken']) {
             $_SESSION['jcartToken'] = md5(session_id() . time() . $_SERVER['HTTP_USER_AGENT']);
         }
         // If enabled, check submitted token against session token for POST requests
-        if ($config['csrfToken'] === 'true' && $_POST && $jcartToken != $_SESSION['jcartToken'])
-        {
+        if ($config['csrfToken'] === 'true' && $_POST && $jcartToken != $_SESSION['jcartToken']) {
             $errorMessage = 'Invalid token!' . $jcartToken . ' / ' . $_SESSION['jcartToken'];
         }
 
@@ -339,21 +295,17 @@ class Jcart
         $url = filter_var($url, FILTER_SANITIZE_URL);
 
         // Round the quantity if necessary
-        if ($config['decimalPlaces'] === true)
-        {
+        if ($config['decimalPlaces'] === true) {
             $qty = round($qty, $config['decimalPlaces']);
         }
 
         // Add an item
-        if ($_POST[$add])
-        {
+        if ($_POST[$add]) {
             $itemAdded = $this->add_item($id, $name, $price, $qty, $url);
             // If not true the add item function returns the error type
-            if ($itemAdded !== true)
-            {
+            if ($itemAdded !== true) {
                 $errorType = $itemAdded;
-                switch ($errorType)
-                {
+                switch ($errorType) {
                     case 'qty':
                         $errorMessage = $config['text']['quantityError'];
                         break;
@@ -365,21 +317,17 @@ class Jcart
         }
 
         // Update a single item
-        if ($_POST['jcartUpdate'])
-        {
+        if ($_POST['jcartUpdate']) {
             $itemUpdated = $this->update_item($_POST['itemId'], $_POST['itemQty']);
-            if ($itemUpdated !== true)
-            {
+            if ($itemUpdated !== true) {
                 $errorMessage = $config['text']['quantityError'];
             }
         }
 
         // Update all items in the cart
-        if ($_POST['jcartUpdateCart'] || $_POST['jcartCheckout'])
-        {
+        if ($_POST['jcartUpdateCart'] || $_POST['jcartCheckout']) {
             $cartUpdated = $this->update_cart();
-            if ($cartUpdated !== true)
-            {
+            if ($cartUpdated !== true) {
                 $errorMessage = $config['text']['quantityError'];
             }
         }
@@ -390,21 +338,18 @@ class Jcart
           subsequent POST requests.  As result, it's not enough to check for
           GET before deleting the item, must also check that this isn't a POST
           request. */
-        if ($_GET['jcartRemove'] && !$_POST)
-        {
+        if ($_GET['jcartRemove'] && !$_POST) {
             $this->remove_item($_GET['jcartRemove']);
         }
 
         // Empty the cart
-        if ($_POST['jcartEmpty'])
-        {
+        if ($_POST['jcartEmpty']) {
             $this->empty_cart();
         }
 
         // Determine which text to use for the number of items in the cart
         $itemsText = $config['text']['multipleItems'];
-        if ($this->itemCount == 1)
-        {
+        if ($this->itemCount == 1) {
             $itemsText = $config['text']['singleItem'];
         }
 
@@ -414,18 +359,14 @@ class Jcart
           sent with Ajax request (set when visitor has javascript enabled and
           updates an item quantity). */
         $isCheckout = strpos(request_uri(), $checkout);
-        if ($isCheckout !== false || $_REQUEST['jcartIsCheckout'] == 'true')
-        {
+        if ($isCheckout !== false || $_REQUEST['jcartIsCheckout'] == 'true') {
             $isCheckout = true;
-        }
-        else
-        {
+        } else {
             $isCheckout = false;
         }
 
         // Overwrite the form action to post to gateway.php instead of posting back to checkout page
-        if ($isCheckout === true)
-        {
+        if ($isCheckout === true) {
 
             // Sanititze config path
             $path = filter_var($config['jcartPath'], FILTER_SANITIZE_URL);
@@ -443,16 +384,14 @@ class Jcart
         // If this error is true the visitor updated the cart from the checkout page using an invalid price format
         // Passed as a session var since the checkout page uses a header redirect
         // If passed via GET the query string stays set even after subsequent POST requests
-        if ($_SESSION['quantityError'] === true)
-        {
+        if ($_SESSION['quantityError'] === true) {
             $errorMessage = $config['text']['quantityError'];
             unset($_SESSION['quantityError']);
         }
 
         // Set currency symbol based on config currency code
         $currencyCode = trim(strtoupper($config['currencyCode']));
-        switch ($currencyCode)
-        {
+        switch ($currencyCode) {
             case 'EUR':
                 $currencySymbol = '&#128;';
                 break;
@@ -509,11 +448,9 @@ class Jcart
         ////////////////////////////////////////////////////////////////////////
         // Output the cart
         // Return specified number of tabs to improve readability of HTML output
-        function tab($n)
-        {
+        function tab($n) {
             $tabs = null;
-            while ($n > 0)
-            {
+            while ($n > 0) {
                 $tabs .= "\t";
                 --$n;
             }
@@ -521,8 +458,7 @@ class Jcart
         }
 
         // If there's an error message wrap it in some HTML
-        if ($errorMessage)
-        {
+        if ($errorMessage) {
             $errorMessage = "<p id='jcart-error'>$errorMessage</p>";
         }
 
@@ -546,10 +482,8 @@ class Jcart
         echo tab(6) . "<th colspan='3'>\n";
 
         // If this is the checkout hide the cart checkout button
-        if ($isCheckout !== true)
-        {
-            if ($config['button']['checkout'])
-            {
+        if ($isCheckout !== true) {
+            if ($config['button']['checkout']) {
                 $inputType = "image";
                 $src = " src='{$config['button']['checkout']}' alt='{$config['text']['checkout']}' title='' ";
             }
@@ -564,12 +498,10 @@ class Jcart
         echo tab(4) . "<tbody>\n";
 
         // If any items in the cart
-        if ($this->itemCount > 0)
-        {
+        if ($this->itemCount > 0) {
 
             // Display line items
-            foreach ($this->get_contents() as $item)
-            {
+            foreach ($this->get_contents() as $item) {
                 echo tab(5) . "<tr>\n";
                 echo tab(6) . "<td class='jcart-item-qty'>\n";
                 echo tab(7) . "<input name='jcartItemId[]' type='hidden' value='{$item['id']}' />\n";
@@ -577,12 +509,9 @@ class Jcart
                 echo tab(6) . "</td>\n";
                 echo tab(6) . "<td class='jcart-item-name'>\n";
 
-                if ($item['url'])
-                {
+                if ($item['url']) {
                     echo tab(7) . "<a href='{$item['url']}'>{$item['name']}</a>\n";
-                }
-                else
-                {
+                } else {
                     echo tab(7) . $item['name'] . "\n";
                 }
                 echo tab(7) . "<input name='jcartItemName[]' type='hidden' value='{$item['name']}' />\n";
@@ -596,8 +525,7 @@ class Jcart
         }
 
         // The cart is empty
-        else
-        {
+        else {
             echo tab(5) . "<tr><td id='jcart-empty' colspan='3'>{$config['text']['emptyMessage']}</td></tr>\n";
         }
         echo tab(4) . "</tbody>\n";
@@ -605,16 +533,14 @@ class Jcart
 
         echo tab(3) . "<div id='jcart-buttons'>\n";
 
-        if ($config['button']['update'])
-        {
+        if ($config['button']['update']) {
             $inputType = "image";
             $src = " src='{$config['button']['update']}' alt='{$config['text']['update']}' title='' ";
         }
 
         echo tab(4) . "<input type='$inputType' $src name='jcartUpdateCart' value='{$config['text']['update']}' class='btn btn-info jcart-button' />\n";
 
-        if ($config['button']['empty'])
-        {
+        if ($config['button']['empty']) {
             $inputType = "image";
             $src = " src='{$config['button']['empty']}' alt='{$config['text']['emptyButton']}' title='' ";
         }
@@ -623,25 +549,22 @@ class Jcart
         echo tab(3) . "</div>\n";
 
         // If this is the checkout display the PayPal checkout button
-        if ($isCheckout === true)
-        {
+        if ($isCheckout === true) {
             // Hidden input allows us to determine if we're on the checkout page
             // We normally check against request uri but ajax update sets value to relay.php
             echo tab(3) . "<input type='hidden' id='jcart-is-checkout' name='jcartIsCheckout' value='true' />\n";
 
             // PayPal checkout button
-            if ($config['button']['checkout'])
-            {
+            if ($config['button']['checkout']) {
                 $inputType = "image";
                 $src = " src='{$config['button']['checkout']}' alt='{$config['text']['checkoutPaypal']}' title='' ";
             }
 
-            if ($this->itemCount <= 0)
-            {
+            if ($this->itemCount <= 0) {
                 $disablePaypalCheckout = " disabled='disabled'";
             }
 
-            echo tab(3) . "<input type='$inputType' $src id='jcart-paypal-checkout' name='jcartPaypalCheckout' value='{$config['text']['checkoutPaypal']}' $disablePaypalCheckout />\n";
+            echo tab(3) . "<button class='btn btn-lg btn-success'>Realizar Pedido</button>";
         }
 
         echo tab(2) . "</fieldset>\n";
@@ -656,35 +579,25 @@ class Jcart
 @session_start();
 
 // Initialize jcart after session start
+$jcart;
 $jcart = $_SESSION['jcart'];
-if (!is_object($jcart))
-{
+if (!is_object($jcart)) {
     $jcart = $_SESSION['jcart'] = new Jcart();
 }
 
 // Enable request_uri for non-Apache environments
 // See: http://api.drupal.org/api/function/request_uri/7
-if (!function_exists('request_uri'))
-{
+if (!function_exists('request_uri')) {
 
-    function request_uri()
-    {
-        if (isset($_SERVER['REQUEST_URI']))
-        {
+    function request_uri() {
+        if (isset($_SERVER['REQUEST_URI'])) {
             $uri = $_SERVER['REQUEST_URI'];
-        }
-        else
-        {
-            if (isset($_SERVER['argv']))
-            {
+        } else {
+            if (isset($_SERVER['argv'])) {
                 $uri = $_SERVER['SCRIPT_NAME'] . '?' . $_SERVER['argv'][0];
-            }
-            elseif (isset($_SERVER['QUERY_STRING']))
-            {
+            } elseif (isset($_SERVER['QUERY_STRING'])) {
                 $uri = $_SERVER['SCRIPT_NAME'] . '?' . $_SERVER['QUERY_STRING'];
-            }
-            else
-            {
+            } else {
                 $uri = $_SERVER['SCRIPT_NAME'];
             }
         }

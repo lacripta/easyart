@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/easyart/templates/nuevos/footer.php</file>
+            <file>file:/C:/wamp/www/easyart/jcart/jcart.php</file>
             <file>file:/C:/wamp/www/easyart/productos.php</file>
             <file>file:/C:/wamp/www/easyart/index.php</file>
-            <file>file:/C:/wamp/www/easyart/detalles.php</file>
-            <file>file:/C:/wamp/www/easyart/js/scripts.js</file>
-            <file>file:/C:/wamp/www/easyart/templates/nuevos/carrusel.php</file>
-            <file>file:/C:/wamp/www/easyart/templates/nuevos/carrusel_productos.php</file>
+            <file>file:/C:/wamp/www/easyart/checkout.php</file>
+            <file>file:/C:/wamp/www/easyart/nosotros.php</file>
+            <file>file:/C:/wamp/www/easyart/producto.php</file>
         </group>
     </open-files>
 </project-private>

@@ -1,18 +1,5 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <!-- Material Design fonts -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <!-- Bootstrap Material Design -->
-        <link href="css/bootstrap-material-design.css" rel="stylesheet">
-        <link href="css/ripples.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-        <title></title>
-    </head>
+<html>    
     <body class="container">
         <?php include_once './templates/header.php'; ?>
         <?php include_once './templates/jcart_modal.php'; ?>

@@ -71,7 +71,7 @@ $config['decimalPlaces'] = 1;
 $config['priceFormat'] = array('decimals' => 2, 'dec_point' => '.', 'thousands_sep' => ',');
 
 // Send visitor to PayPal via HTTPS?
-$config['paypal']['https'] = true;
+$config['paypal']['https'] = false;
 
 // Use PayPal sandbox?
 $config['paypal']['sandbox'] = false;

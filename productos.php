@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php include_once './templates/nuevos/header.php'; ?>
+    <?php include_once './templates/header.php'; ?>
+    <?php include_once './templates/jcart_modal.php'; ?>
     <!-- Page Content -->
     <div class="container">
 
@@ -89,8 +90,31 @@
         <a onclick="filtro_productos('{{producto_categoria}}','{{producto_grupo}}')">{{producto_grupo}}</a>
         {{{producto_descripcion}}}
         </div>
+        <form method="post" action="" class="jcart col-sm-6">
+        <input type="hidden" name="jcartToken" value="<?php echo $_SESSION['jcartToken']; ?>" />
+        <input type="hidden" name="my-item-id" value="{{producto_id}}" />
+        <input type="hidden" name="my-item-name" value="{{producto_nombre}}" />
+        <input type="hidden" name="my-item-price" value="{{producto_precio}}" />
+        <input type="hidden" name="my-item-url" value="" />
+        <label for="my-item-qty" class="control-label">Cantidad: </label>
+        <input type="number" name="my-item-qty" value="1" size="3" min="0" />
+        <h4><span class="lead"></span> {{precio producto_precio}} <small>COP</small></h4>
+        <input type="submit" name="my-add-button" value="add to cart" class="btn btn-primary" />
+        </form>
+        </div>
+        <div class="col-sm-6">
+        <a target="_blank" title="Facebook - {{producto_nombre}}">
+        <img src="http://www.mrwonderfulshop.es/skin/frontend/clean/default/images/social-facebook.png" alt="Facebook">
+        </a>
+        <a target="_blank">
+        <img src="http://www.mrwonderfulshop.es/skin/frontend/clean/default/images/social-twitter.png" alt="Twitter">
+        </a>
+        <a target="_blank">
+        <img src="http://www.mrwonderfulshop.es/skin/frontend/clean/default/images/social-pinterest.png" alt="Pinterest">
+        </a>
         </div>
         </div>
+
         {{#each imagenes}}
         <img class="img-responsive col-sm-2 thumbnail" src="{{producto_imagen_url}}" alt="{{producto_imagen_titulo}}" class="img-responsive" onclick="imagen('{{producto_imagen_url}}')">
         {{/each}}
@@ -159,6 +183,10 @@
             var theTemplate = Handlebars.compile($("#detalles-template").html());
             var theCompiledHtml = theTemplate(producto);
             $('.productos-placeholder').html(theCompiledHtml);
+            $('.jcart').submit(function (e) {
+                e.preventDefault();
+                add($(this));
+            });
         }
         function categoria(id) {
             productos_breadcrumbs.categoria = '';
@@ -221,6 +249,7 @@
             rivets.bind($('#productos-breadcrumbs'), {nav: productos_breadcrumbs});
             lista_categorias();
             galeria_productos();
+            jcart();
         });
 
     </script>

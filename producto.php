@@ -6,13 +6,7 @@
     <body class="container">
         <?php include_once './templates/header.php'; ?>
         <?php include_once './templates/jcart_modal.php'; ?>
-        <?php include_once './templates/carrusel.php'; ?>
-        <div class='botones-sociales derecha hidden-phone hidden-tablet'>
-            <a class='itemsocial' href='<?= $facebook ?>' id='facebook-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
-            <a class='itemsocial' href='<?= $twitter ?>' id='twitter-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
-            <a class='itemsocial' href='<?= $youtube ?>' id='youtube-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
-            <a class='itemsocial' href='<?= $pinterest ?>' id='pinterest-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
-        </div>
+        <?php include_once './templates/nuevos/carrusel.php'; ?>
 
         <div class="row well">
             <div class="home-category-title-container">
@@ -103,6 +97,17 @@
                         <h4><span class="lead">$</span> 9.500 <small>COP</small></h4>
                         <input type="submit" name="my-add-button" value="add to cart" class="btn btn-primary" />
                     </form>
+                    <form method="post" action="" class="jcart col-sm-6">
+                        <input type="hidden" name="jcartToken" value="<?php echo $_SESSION['jcartToken']; ?>" />
+                        <input type="hidden" name="my-item-id" value="ABC-122" />
+                        <input type="hidden" name="my-item-name" value="Lámina Lovely Streets" />
+                        <input type="hidden" name="my-item-price" value="9500" />
+                        <input type="hidden" name="my-item-url" value="" />
+                        <label for="my-item-qty" class="control-label">Cantidad: </label>
+                        <input type="hidden" name="my-item-qty" value="1" size="3" min="0" />
+                        <h4><span class="lead">$</span> 9.500 <small>COP</small></h4>
+                        <input type="submit" name="my-add-button" value="add to cart" class="btn btn-primary" />
+                    </form>
                     <div class="col-sm-6">
                         <a target="_blank" title="Facebook - Lámina Lovely Streets - O que me apaixona em Lisboa (PT)">
                             <img src="http://www.mrwonderfulshop.es/skin/frontend/clean/default/images/social-facebook.png" alt="Facebook">
@@ -117,7 +122,7 @@
                 </div>
             </div>
         </div>
-        <?php include_once './templates/footer.php'; ?>
+        <?php include_once './templates/nuevos/footer.php'; ?>
     </body>
 </html>
 

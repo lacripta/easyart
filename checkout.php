@@ -26,7 +26,7 @@ session_start();
             <div id="content">
                 <div id="jcart"><?php $jcart->display_cart(); ?></div>
 
-                <p><a href="index.php">&larr; Seguir Comprando</a></p>
+                <p><a href="productos.php">&larr; Seguir Comprando</a></p>
 
                 <?php
 //echo '<pre>';
