@@ -1962,7 +1962,7 @@ legend {
   margin-bottom: 20px;
 }
 .navbar .navbar-nav > li > a {
-  color: inherit;
+  /*color: inherit;*/
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -2086,7 +2086,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar,
 .navbar.navbar-default {
-  background-color: #009688;
+  background-color: #ecc4c4;
   color: rgba(255,255,255, 0.84);
 }
 .navbar .navbar-form .form-group input.form-control::-moz-placeholder,

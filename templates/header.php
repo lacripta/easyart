@@ -61,7 +61,4 @@
 </nav>
 <div class='botones-sociales derecha'>
     <a class='itemsocial' href='' id='facebook-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
-    <a class='itemsocial' href='' id='twitter-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
-    <a class='itemsocial' href='' id='youtube-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
-    <a class='itemsocial' href='' id='pinterest-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
 </div>
