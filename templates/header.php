@@ -48,7 +48,7 @@
                         <a href="nosotros.php">Nosotros</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contactenos</a>
+                        <a href="contacto.php">Contactenos</a>
                     </li>
                     <li>
                         <a href="checkout.php">Carrito</a>
