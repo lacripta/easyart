@@ -490,7 +490,7 @@ class Jcart {
             echo tab(7) . "<input type='$inputType' $src id='jcart-checkout' name='jcartCheckout' class='btn btn-info jcart-button' value='{$config['text']['checkout']}' />\n";
         }
 
-        echo tab(7) . "<h4 id='jcart-subtotal'>{$config['text']['subtotal']}: <strong style='color: #00f'>$currencySymbol" . number_format($this->subtotal, $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</strong></h4>\n";
+        echo tab(7) . "<h4 id='jcart-subtotal'>{$config['text']['subtotal']}: <strong style='color: #F44336'>$currencySymbol" . number_format($this->subtotal, $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</strong></h4>\n";
         echo tab(6) . "</th>\n";
         echo tab(5) . "</tr>\n";
         echo tab(4) . "</tfoot>\n";
