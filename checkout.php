@@ -14,28 +14,20 @@ session_start();
         <?php include_once './templates/header.php'; ?>
 
     </head>
-    <body>
-
-        <div id="wrapper" class="container box">
-            <h2>Carrito de compras</h2>
-            <p>Para el proceso de compra se hará un pedido a los administradores de la tienda por medio de correo electrónico, quienes se pondrán en contacto con usted para coordinar el pago e instalación de los productos deseados.</p>
-            <div id="sidebar">
-            </div>
-
-            <div id="content" class="text-center">
-                <div id="jcart"><?php $jcart->display_cart(); ?></div>
-                <?php
-//echo '<pre>';
-//var_dump($_SESSION['jcart']);
-//echo '</pre>';
-                ?>
-            </div>
-            <p><a href="productos.php">&larr; Seguir Comprando</a></p>
-
-            <div class="clear"></div>
+    <div id="wrapper" class="container box">
+        <h2>Carrito de compras</h2>
+        <p>Para el proceso de compra se hará un pedido a los administradores de la tienda por medio de correo electrónico, quienes se pondrán en contacto con usted para coordinar el pago e instalación de los productos deseados.</p>
+        <div id="sidebar">
         </div>
-        <?php include_once './templates/nuevos/footer.php'; ?>
-    </body>
+
+        <div id="content" class="text-center">
+            <div id="jcart"><?php $jcart->display_cart(); ?></div>
+        </div>
+        <p><a href="productos.php">&larr; Seguir Comprando</a></p>
+
+        <div class="clear"></div>
+    </div>
+    <?php include_once './templates/nuevos/footer.php'; ?>
     <div class="modal fade" id="detallesModal" tabindex="-1" role="dialog" aria-labelledby="detallesModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

@@ -1,5 +1,5 @@
 <div class="container">
-    <footer style="background-color: #ecc4c4">
+    <footer  style="<?php echo "" ?> background-color: #ecc4c4;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -29,3 +29,4 @@
     });
 </script>
 
+</body>

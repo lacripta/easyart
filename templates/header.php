@@ -18,12 +18,12 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 
-    <title>EasyArt - dale estilo a tu espacio</title>
+    <title>EasyArt - Decoraci&oacuten Detalles y Dise&#209o</title>
 </head>
 <div class="container">
     <div class="brand"><img src="/easyart/img/logo.png" class="hidden-xs hidden-sm" width="30%" alt="EasyArt llena de vida tu hogar"></div>
     <!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default" role="navigation" style="<?php echo "" ?> background-color: #ecc4c4;">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -64,3 +64,4 @@
     </div>
 
 </div>
+<body style="background-image: url(/easyart/img/bg/Image00042.png);">
