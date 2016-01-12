@@ -35,7 +35,7 @@
     <hr class="tagline-divider">
     <h2>
     <small>
-    <strong>Llena de estilo tus espacios</strong>
+    <strong>Decoraci&oacuten Detalles y Dise&#209o</strong>
     </small>
     </h2>
     </div>

@@ -11,12 +11,15 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
+   width="110.18857mm"
+   height="34.190353mm"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="logo.svg">
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="C:\wamp\www\easyart\img\logo.png"
+   inkscape:export-xdpi="150"
+   inkscape:export-ydpi="150">
   <defs
      id="defs4">
     <pattern
@@ -60,7 +63,7 @@
        inkscape:label="Bark"
        inkscape:menu="Textures"
        inkscape:menu-tooltip="Bark texture, vertical; use with deep colors"
-       color-interpolation-filters="sRGB">
+       style="color-interpolation-filters:sRGB">
       <feTurbulence
          id="feTurbulence5408"
          seed="10"
@@ -101,7 +104,7 @@
          specularExponent="35"
          specularConstant="1"
          surfaceScale="2"
-         lighting-color="rgb(255,255,255)"
+         lighting-color="#ffffff"
          result="result1"
          in="result4">
         <feDistantLight
@@ -122,7 +125,9 @@
          k2="1"
          operator="arithmetic"
          result="result4"
-         in="result4" />
+         in="result4"
+         k1="0"
+         k4="0" />
       <feBlend
          id="feBlend5428"
          in2="result4"
@@ -133,7 +138,7 @@
        inkscape:label="Rough and glossy"
        inkscape:menu="Textures"
        inkscape:menu-tooltip="Crumpled glossy paper effect which can be used for pictures as for objects"
-       color-interpolation-filters="sRGB">
+       style="color-interpolation-filters:sRGB">
       <feTurbulence
          id="feTurbulence3021"
          type="fractalNoise"
@@ -172,7 +177,10 @@
          in="result1"
          operator="arithmetic"
          k1="1"
-         result="result2" />
+         result="result2"
+         k2="0"
+         k3="0"
+         k4="0" />
       <feComposite
          id="feComposite3033"
          in2="result3"
@@ -180,7 +188,9 @@
          operator="arithmetic"
          k2="1"
          k3="1"
-         result="result4" />
+         result="result4"
+         k1="0"
+         k4="0" />
       <feComposite
          id="feComposite3035"
          in2="SourceAlpha"
@@ -196,14 +206,14 @@
     </filter>
     <filter
        id="filter3039"
-       y="-0.15"
+       y="-0.15000001"
        height="1.3"
-       x="-0.15"
+       x="-0.15000001"
        width="1.3"
        inkscape:menu-tooltip="Aquarelle paper effect which can be used for pictures as for objects"
        inkscape:menu="Textures"
        inkscape:label="Rough paper"
-       color-interpolation-filters="sRGB">
+       style="color-interpolation-filters:sRGB">
       <feTurbulence
          id="feTurbulence3041"
          type="fractalNoise"
@@ -221,7 +231,7 @@
          result="result3" />
       <feDiffuseLighting
          id="feDiffuseLighting3045"
-         lighting-color="rgb(233,230,215)"
+         lighting-color="#e9e6d7"
          diffuseConstant="1"
          surfaceScale="2"
          result="result1"
@@ -242,7 +252,10 @@
          in2="result1"
          result="result5"
          operator="arithmetic"
-         k1="1.7" />
+         k1="1.7"
+         k2="0"
+         k3="0"
+         k4="0" />
       <feBlend
          id="feBlend3053"
          in2="result3"
@@ -254,7 +267,7 @@
        inkscape:menu-tooltip="Draws a black outline around"
        inkscape:menu="ABCs"
        inkscape:label="Black outline"
-       color-interpolation-filters="sRGB">
+       style="color-interpolation-filters:sRGB">
       <feGaussianBlur
          id="feGaussianBlur3475"
          stdDeviation="2"
@@ -267,11 +280,12 @@
          operator="arithmetic"
          in="SourceGraphic"
          k2="1"
-         k3="10" />
+         k3="10"
+         k1="0"
+         k4="0" />
       <feComposite
          id="feComposite3479"
          in2="result3"
-         k2="1"
          operator="in"
          in="result3"
          result="result4" />
@@ -281,7 +295,7 @@
        inkscape:menu-tooltip="Draws a black outline around"
        inkscape:menu="ABCs"
        inkscape:label="Black outline"
-       color-interpolation-filters="sRGB">
+       style="color-interpolation-filters:sRGB">
       <feGaussianBlur
          id="feGaussianBlur3484"
          stdDeviation="2"
@@ -294,11 +308,12 @@
          operator="arithmetic"
          in="SourceGraphic"
          k2="1"
-         k3="10" />
+         k3="10"
+         k1="0"
+         k4="0" />
       <feComposite
          id="feComposite3488"
          in2="result3"
-         k2="1"
          operator="in"
          in="result3"
          result="result4" />
@@ -307,7 +322,7 @@
        inkscape:label="Bark"
        inkscape:menu="Textures"
        inkscape:menu-tooltip="Bark texture, vertical; use with deep colors"
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        id="filter3394">
       <feTurbulence
          seed="10"
@@ -348,7 +363,7 @@
          specularExponent="35"
          specularConstant="1"
          surfaceScale="2"
-         lighting-color="rgb(255,255,255)"
+         lighting-color="#ffffff"
          result="result1"
          in="result4"
          id="feSpecularLighting3408">
@@ -370,7 +385,9 @@
          result="result4"
          in="result4"
          in2="result2"
-         id="feComposite3414" />
+         id="feComposite3414"
+         k1="0"
+         k4="0" />
       <feBlend
          mode="multiply"
          in2="result4"
@@ -385,8 +402,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="448.77739"
-     inkscape:cy="559.84101"
+     inkscape:cx="169.32195"
+     inkscape:cy="88.279849"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -394,7 +411,11 @@
      inkscape:window-height="837"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -403,42 +424,18 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <rect
-       style="fill:#ff9955"
-       id="rect2997"
-       width="292.5228"
-       height="118.79549"
-       x="296.82663"
-       y="162.69862"
-       ry="22.209593"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:#c8beb7;filter:url(#filter3482)"
-       d="m 336.46429,349.95089 c -2.53229,0.0107 -5.03557,0.1212 -7.53125,0.28125 l -1.0625,0 0,0.0625 c -66.88202,4.85754 -119.63029,62.59896 -119.71875,133.15625 l 119.71875,0.21875 0,0.125 192.125,0 0,-0.125 c 70.2387,-0.86875 127.10825,-60.01837 127.4375,-133.15625 l -128.9375,-0.5625 -128.9375,0.25 c 10e-6,0.0104 -2e-5,0.0208 0,0.0312 l -44.5625,0 c -2.81969,-0.17899 -5.66587,-0.29341 -8.53125,-0.28125 z"
-       id="path3003"
-       inkscape:connector-curvature="0"
-       transform="matrix(1.107135,0,0,1.4526925,520.23989,-407.1914)" />
-    <ellipse
-       id="path2993"
-       style="fill:#ffaaaa"
-       cx="188.08017"
-       cy="185.70984"
-       rx="107.14286"
-       ry="85.35714"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+     id="layer1"
+     transform="translate(-220.04492,-381.91526)">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:99.29029083px;line-height:125%;font-family:'Script MT Bold';-inkscape-font-specification:'Script MT Bold';letter-spacing:0px;word-spacing:0px;fill:#ffb380;fill-opacity:1;stroke:none;filter:url(#filter3473)"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:99.29029083px;line-height:125%;font-family:'Script MT Bold';-inkscape-font-specification:'Script MT Bold';letter-spacing:0px;word-spacing:0px;fill:#6bc7c7;fill-opacity:1;stroke:none;filter:url(#filter3473);"
        x="249.7205"
        y="460.4021"
        id="text2985"
@@ -451,16 +448,16 @@
          y="460.4021">EasyArt</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.57081223px;line-height:125%;font-family:'Roboto Th';-inkscape-font-specification:'Roboto Th Bold Italic';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;"
-       x="259.68076"
-       y="476.40756"
+       style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:13.57081223px;line-height:125%;font-family:Roboto;-inkscape-font-specification:'Roboto Light Italic';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="426.10931"
+       y="479.43185"
        id="text2989"
        sodipodi:linespacing="125%"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan2991"
-         x="259.68076"
-         y="476.40756">llena de vida tu hogar</tspan></text>
+         x="426.10931"
+         y="479.43185">Decoración Detalles y Diseño</tspan></text>
   </g>
 </svg>

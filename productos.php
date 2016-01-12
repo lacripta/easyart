@@ -80,7 +80,7 @@
     <script id="detalles-template" type="text/x-handlebars-template">
         <div class="col-md-12 box">
         <div class="thumbnail col-md-5">
-        <img src="{{producto_imagen}}" alt="{{producto_imagen_titulo}}" class="img-responsive" style="height:100%;"  onclick="imagen('{{producto_imagen}}')">
+        <img src="{{producto_imagen}}" alt="{{producto_imagen_titulo}}" class="img-responsive" style="height:100%;" id="img_detalles" onclick="imagen('{{producto_imagen}}')">
         </div>
         <div class="thumbnail col-md-6 pull-right">
         <div class="caption-full">
@@ -99,7 +99,7 @@
         <label for="my-item-qty" class="control-label">Cantidad: </label>
         <input type="number" name="my-item-qty" value="1" size="3" min="0" />
         <h4><span class="lead"></span> {{precio producto_precio}} <small>COP</small></h4>
-        <input type="submit" name="my-add-button" value="add to cart" class="btn btn-primary" />
+        <input type="submit" name="my-add-button" value="Agregar" class="btn btn-primary" />
         </form>
         </div>
         <div class="col-sm-6">
@@ -116,15 +116,18 @@
         </div>
 
         {{#each imagenes}}
-        <img class="img-responsive col-sm-2 thumbnail" src="{{producto_imagen_url}}" alt="{{producto_imagen_titulo}}" class="img-responsive" onclick="imagen('{{producto_imagen_url}}')">
+        <img class="img-responsive col-sm-2 thumbnail" src="{{producto_imagen_url}}" alt="{{producto_imagen_titulo}}" class="img-responsive" onclick="imagen_detalles('{{producto_imagen_url}}')">
         {{/each}}
     </script>
     <!-- /.container -->
     <?php include_once './templates/nuevos/footer.php'; ?>
     <script>
+        function imagen_detalles(url) {
+            $("#img_detalles").attr("src", url);
+        }
         function imagen(url) {
-            $("#vista").attr("src", url);
-            $('#imagen_modal').modal('show')
+            $("#vista").attr("src", $("#img_detalles").attr("src"));
+            $('#imagen_modal').modal('show');
         }
         var productos_breadcrumbs = {
             categoria: '',

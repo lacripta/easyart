@@ -464,7 +464,7 @@ class Jcart {
 
         // Display the cart header
         echo tab(1) . "$errorMessage\n";
-        echo tab(1) . "<form method='post' action='$checkout'>\n";
+        echo tab(1) . "<form id='carrito_easyart' method='post' action='$checkout'>\n";
         echo tab(2) . "<fieldset>\n";
         echo tab(3) . "<input type='hidden' name='jcartToken' value='{$_SESSION['jcartToken']}' />\n";
         echo tab(3) . "<table border='1'>\n";
@@ -490,7 +490,7 @@ class Jcart {
             echo tab(7) . "<input type='$inputType' $src id='jcart-checkout' name='jcartCheckout' class='btn btn-info jcart-button' value='{$config['text']['checkout']}' />\n";
         }
 
-        echo tab(7) . "<span id='jcart-subtotal'>{$config['text']['subtotal']}: <strong>$currencySymbol" . number_format($this->subtotal, $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</strong></span>\n";
+        echo tab(7) . "<h4 id='jcart-subtotal'>{$config['text']['subtotal']}: <strong style='color: #00f'>$currencySymbol" . number_format($this->subtotal, $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</strong></h4>\n";
         echo tab(6) . "</th>\n";
         echo tab(5) . "</tr>\n";
         echo tab(4) . "</tfoot>\n";
@@ -503,22 +503,22 @@ class Jcart {
             // Display line items
             foreach ($this->get_contents() as $item) {
                 echo tab(5) . "<tr>\n";
-                echo tab(6) . "<td class='jcart-item-qty'>\n";
+                echo tab(6) . "<td class='jcart-item-qty col-xs-2'>\n";
                 echo tab(7) . "<input name='jcartItemId[]' type='hidden' value='{$item['id']}' />\n";
                 echo tab(7) . "<input id='jcartItemQty-{$item['id']}' name='jcartItemQty[]' size='2' type='text' value='{$item['qty']}' />\n";
                 echo tab(6) . "</td>\n";
                 echo tab(6) . "<td class='jcart-item-name'>\n";
 
                 if ($item['url']) {
-                    echo tab(7) . "<a href='{$item['url']}'>{$item['name']}</a>\n";
+                    echo tab(7) . "<a class='text-uppercase' onclick='detalles_producto($item[id])'>{$item['name']}</a>\n";
                 } else {
-                    echo tab(7) . $item['name'] . "\n";
+                    echo tab(7) . "<a class='text-uppercase' onclick='detalles_producto($item[id])'>$item[name]</a> ";
                 }
                 echo tab(7) . "<input name='jcartItemName[]' type='hidden' value='{$item['name']}' />\n";
                 echo tab(6) . "</td>\n";
                 echo tab(6) . "<td class='jcart-item-price'>\n";
                 echo tab(7) . "<span>$currencySymbol" . number_format($item['subtotal'], $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</span><input name='jcartItemPrice[]' type='hidden' value='{$item['price']}' />\n";
-                echo tab(7) . "<a class='jcart-remove' href='?jcartRemove={$item['id']}'>{$config['text']['removeLink']}</a>\n";
+                echo tab(7) . "<a class='jcart-remove btn btn-primary' href='?jcartRemove={$item['id']}'>{$config['text']['removeLink']}</a>\n";
                 echo tab(6) . "</td>\n";
                 echo tab(5) . "</tr>\n";
             }
@@ -564,12 +564,23 @@ class Jcart {
                 $disablePaypalCheckout = " disabled='disabled'";
             }
 
-            echo tab(3) . "<button class='btn btn-lg btn-success'>Realizar Pedido</button>";
+            echo tab(3) . "<button class='btn btn-lg btn-warning'>Realizar Pedido</button>";
         }
-
-        echo tab(2) . "</fieldset>\n";
+        echo tab(2) . "</fieldset>\n"
+        . "<div class='form-group'>"
+        . "<label for='cliente_nombre'>Nombre y Apellidos:"
+        . "<input type='text' name='cliente_nombre' id='cliente_nombre' class='form-control' placeholder='Nombre y apellidos' required>"
+        . "</label>"
+        . "<label for='cliente_telefono'>Telef&oacute;no:"
+        . "<input type='text' name='cliente_telefono' id='cliente_telefono' class='form-control' placeholder='Telef&oacute;no' required>"
+        . "</label>"
+        . "<label for='cliente_mail'>e-mail:"
+        . "<input type='text' name='cliente_mail' id='cliente_mail' class='form-control' placeholder='correo electronico' required>"
+        . "</label>"
+        . "</div>"
+        . ""
+        . "";
         echo tab(1) . "</form>\n\n";
-
         echo tab(1) . "<div id='jcart-tooltip'></div>\n";
     }
 

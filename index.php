@@ -11,7 +11,7 @@
                 <div class="box">
                     <div class="home-category-title-container">
                         <span><h2 class="home-category-title">
-                                <span>Noticias</span>
+                                <span>Novedades</span>
                             </h2></span>
                     </div>
                     <div class="col-lg-12">
@@ -42,7 +42,8 @@
                             <!-- Controls -->
                             <div class="controls pull-right">
                                 <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example"
-                                   data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-success" href="#carousel-example"
+                                   data-slide="prev"></a>
+                                <a class="right fa fa-chevron-right btn btn-success" href="#carousel-example"
                                    data-slide="next"></a>
                             </div>
                         </div>
@@ -71,10 +72,10 @@
                                             <div class="col-sm-3 col-xs-6">
                                                 <div class="col-item">
                                                     <div class="photo">
-                                                        <img src="<?= $elemento["producto_imagen"] ?>" class="img-responsive" alt="<?= $elemento["producto_imagen_titulo"] ?>" />
+                                                        <img  onclick="detalles_productos(<?= $elemento["producto_id"] ?>)" src="<?= $elemento["producto_imagen"] ?>" class="img-responsive" alt="<?= $elemento["producto_imagen_titulo"] ?>" />
                                                     </div>
                                                     <div class="info">
-                                                        <div class="row">
+                                                        <div class="row"  onclick="detalles_productos(<?= $elemento["producto_id"] ?>)">
                                                             <div class="price col-md-6">
                                                                 <h6>
                                                                     <?= $elemento["producto_nombre"] ?></h6>
@@ -127,7 +128,7 @@
         <script id="detalles-template" type="text/x-handlebars-template">
             <div class="col-md-12 box">
             <div class="thumbnail col-md-12">
-            <img src="{{producto_imagen}}" alt="{{producto_imagen_titulo}}" class="img-responsive" style="height:100%;"  onclick="imagen('{{producto_imagen}}')">
+            <img src="{{producto_imagen}}" alt="{{producto_imagen_titulo}}" class="img-responsive" style="height:100%;" id="img_detalles" onclick="imagen('{{producto_imagen}}')">
             </div>
             <div class="thumbnail col-md-12 pull-right">
             <div class="caption-full">
@@ -142,11 +143,11 @@
             <input type="hidden" name="my-item-id" value="{{producto_id}}" />
             <input type="hidden" name="my-item-name" value="{{producto_nombre}}" />
             <input type="hidden" name="my-item-price" value="{{producto_precio}}" />
-            <input type="hidden" name="my-item-url" value="" />
+            <input type="hidden" name="my-item-url" value="{{producto_id}}" />
             <label for="my-item-qty" class="control-label">Cantidad: </label>
             <input type="number" name="my-item-qty" value="1" size="3" min="0" />
             <h4><span class="lead"></span> {{precio producto_precio}} <small>COP</small></h4>
-            <input type="submit" name="my-add-button" value="add to cart" class="btn btn-primary" />
+            <input type="submit" name="my-add-button" value="Agregar" class="btn btn-primary" />
             </form>
             </div>
             <div class="col-sm-6">
@@ -167,9 +168,11 @@
             {{/each}}
         </script>
 
-
         <?php include_once './templates/nuevos/footer.php'; ?>
         <script>
+            function imagen(url) {
+                $("#img_detalles").attr("src", url);
+            }
             Handlebars.registerHelper('precio', function (precio) {
                 return accounting.formatMoney(precio, "$ ", 0);
             });
@@ -185,6 +188,7 @@
                 $('#detallesModal').modal('show')
             }
             $(function () {
+                crear_galeria();
                 jcart();
             });
         </script>

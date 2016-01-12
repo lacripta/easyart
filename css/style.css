@@ -119,9 +119,9 @@ body{
     font-size: 4em;
 }
 .home-category-title-container { clear:left; margin: 20px 0 0 -29px; background:transparent url(../img/home_category_left_bg.png) no-repeat; position:relative; height:38px; }
-.home-category-title-container span, .category-title-container span { display:block; margin: 0 0 0 13px; background:transparent url(http://www.mrwonderfulshop.es/skin/frontend/clean/default/images/home_category_bg.png) repeat-x; position:relative; height:30px; }
-.home-category-title { position:absolute; left:0; top:0; margin:0;  background: transparent url(../img/home_category_right_bg.png) no-repeat top right; font-size: 22px; line-height:30px; color:#fff; }
-.home-category-title span {padding:0 15px; margin: 0 13px 0 0; display:block; background:#00ba9c; font-size:22px; line-height:30px; }
+.home-category-title-container span, .category-title-container span { display:block; margin: 0 0 0 13px; background:transparent url(/easyart/img/home_category_bg.png) repeat-x; position:relative; height:30px; }
+.home-category-title { position:absolute; left:0; top:0; margin:0;  background: transparent url(../img/home_category_right_bg.png) no-repeat top right; font-size: 22px; line-height:30px; }
+.home-category-title span {padding:0 15px; margin: 0 13px 0 0; display:block; background:#ffcdd4; font-size:22px; line-height:30px; }
 /*ELEMENTOS DE LOS BOTONES SOCIALES*/
 .botones-sociales {
     position: fixed;

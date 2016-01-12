@@ -20,45 +20,47 @@
 
     <title>EasyArt - dale estilo a tu espacio</title>
 </head>
-
-<div class="brand"><img src="/easyart/img/logo.png" class="hidden-xs hidden-sm" width="30%" alt="EasyArt llena de vida tu hogar"></div>
-<!-- Navigation -->
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand hidden-md hidden-lg"  href="http://localhost/admin/"><img src="/easyart/img/logo2.png" height="150%"></a>
+<div class="container">
+    <div class="brand"><img src="/easyart/img/logo.png" class="hidden-xs hidden-sm" width="30%" alt="EasyArt llena de vida tu hogar"></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand hidden-md hidden-lg"  href="http://localhost/admin/"><img src="/easyart/img/logo.png" height="150%"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.php">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="productos.php">Productos</a>
+                    </li>
+                    <li>
+                        <a href="nosotros.php">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contactenos</a>
+                    </li>
+                    <li>
+                        <a href="checkout.php">Carrito</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="index.php">Inicio</a>
-                </li>
-                <li>
-                    <a href="productos.php">Productos</a>
-                </li>
-                <li>
-                    <a href="nosotros.php">Nosotros</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contactenos</a>
-                </li>
-                <li>
-                    <a href="checkout.php">Carrito</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+        <!-- /.container -->
+    </nav>
+    <div class='botones-sociales derecha'>
+        <a class='itemsocial' href='' id='facebook-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
     </div>
-    <!-- /.container -->
-</nav>
-<div class='botones-sociales derecha'>
-    <a class='itemsocial' href='' id='facebook-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
+
 </div>

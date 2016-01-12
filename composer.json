@@ -1,0 +1,13 @@
+{
+    "name": "vendor/easyart",
+    "description": "Description of project easyart.",
+    "authors": [
+        {
+            "name": "joseybv",
+            "email": "joseybv@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "dev-master"
+    }
+}

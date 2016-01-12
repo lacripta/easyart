@@ -1,12 +1,14 @@
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <p class="">Carrera 27 # 18 - 3 | Arauca, AR 81001 | 318.333.2323<br>Copyright &copy; Your Website 2014</p>
+<div class="container">
+    <footer style="background-color: #ecc4c4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p class="">Carrera 27 # 18 - 3 | Arauca, AR 81001 | 318.333.2323<br>Copyright &copy; Your Website 2014</p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+</div>
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 <script src="js/scripts.js"></script>
@@ -22,7 +24,6 @@
 
 <!-- Script to Activate the Carousel -->
 <script>
-    crear_galeria();
     $(document).ready(function () {
         $.material.init();
     });
