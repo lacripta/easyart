@@ -20,10 +20,13 @@
 
     <title>EasyArt - Decoraci&oacuten Detalles y Dise&#209o</title>
 </head>
+<?php
+$estilo = json_decode(file_get_contents('http://localhost/easyapp/admin/estilos/actual'), true);
+?>
 <div class="container">
-    <div class="brand"><img src="/easyart/img/logo.png" class="hidden-xs hidden-sm" width="30%" alt="EasyArt llena de vida tu hogar"></div>
+    <div class="brand"><img src="/easyart/img/logo.png" class="hidden-xs hidden-sm" width="30%" alt="EasyArt Decoraci&oacuten Detalles y Dise&#209o"></div>
     <!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation" style="<?php echo "" ?> background-color: #ecc4c4;">
+    <nav class="navbar navbar-default" role="navigation" style="<?php echo $estilo[array_search("background-color", array_column($estilo, "estilo_nombre"))]["estilo_nombre"] . ":" . $estilo[array_search("background-color", array_column($estilo, "estilo_nombre"))]["estilo_valor"] . ";"; ?>">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -33,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand hidden-md hidden-lg"  href="http://localhost/admin/"><img src="/easyart/img/logo.png" height="150%"></a>
+                <a class="navbar-brand hidden-md hidden-lg"  href="/easyart/index.php"><img src="/easyart/img/logo.png" height="150%"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -64,4 +67,4 @@
     </div>
 
 </div>
-<body style="background-image: url(/easyart/img/bg/Image00042.png);">
+<body style="<?php echo $estilo[array_search("background-image", array_column($estilo, "estilo_nombre"))]["estilo_nombre"] . ":url('" . $estilo[array_search("background-image", array_column($estilo, "estilo_nombre"))]["estilo_valor"] . "');"; ?>">
