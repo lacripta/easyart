@@ -30,7 +30,7 @@ if ($_POST['jcartUpdateCart'] || $_POST['jcartEmpty']) {
         $protocol = 'https://';
     }
 
-    header('Location: /easyart/checkout.php');
+    header('Location: /checkout.php');
     exit;
 }
 
@@ -142,12 +142,12 @@ else {
             echo 'Message has been sent';
             $_SESSION["mensaje"] = "alert(\"Se ha realizado su pedido. Hemos enviado un correo electronico con la lista de productos e información de contacto. Pronto nos comunicaremos con usted\");";
             $jcart->empty_cart();
-            header('Location: /easyart/checkout.php');
+            header('Location: /checkout.php');
         }
 
         // Empty the cart
         //$jcart->empty_cart();
-        //header('Location: /easyart/index.php');
+        //header('Location: /index.php');
     }
 }
 ?>

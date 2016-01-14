@@ -7,7 +7,7 @@
             <p>Si deseas dar a conocer tu opinión, dar una sugerencia o ponerteen contacto con nosotros puedes hacerlo por este medio, estos mensajes llegan directamente al personal adecuado para responder tus inquietudes.</p>
         </div>
         <div class="col-sm-12">
-            <form class="" action="/easyart/jcart/mail.php" method="post">
+            <form class="" action="/jcart/mail.php" method="post">
                 <div class="form-group">
                     <label for="contacto_nombre">Nombre:
                         <input name="contacto_nombre" class="form-control" required="">

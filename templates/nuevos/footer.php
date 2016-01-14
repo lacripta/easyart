@@ -17,9 +17,9 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.8.1/rivets.bundled.min.js"></script>
-<script type="text/javascript" src="/easyart/jcart/js/jcart.js"></script>
-<script type="text/javascript" src="/easyart/js/material.min.js"></script>
-<script type="text/javascript" src="/easyart/js/ripples.min.js"></script>
+<script type="text/javascript" src="/jcart/js/jcart.js"></script>
+<script type="text/javascript" src="/js/material.min.js"></script>
+<script type="text/javascript" src="/js/ripples.min.js"></script>
 
 
 <!-- Script to Activate the Carousel -->

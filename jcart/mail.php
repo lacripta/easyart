@@ -32,6 +32,6 @@ if (!$mail->send()) {
     echo 'Message has been sent';
     session_start();
     $_SESSION["contacto"] = "alert(\"Su mensaje ha sido enviado\");";
-    header('Location: /easyart/contacto.php');
+    header('Location: /contacto.php');
 }
 

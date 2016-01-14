@@ -52,11 +52,11 @@
         <img alt="Bootstrap Image Preview" src="img/logo.png" style="width: 80%">
     </div>
 </div>
-<script type="text/javascript" src="/easyart/js/jquery.js"></script>
-<script type="text/javascript" src="/easyart/jcart/js/jcart.min.js"></script>
-<script type="text/javascript" src="/easyart/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/easyart/js/material.min.js"></script>
-<script type="text/javascript" src="/easyart/js/ripples.min.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/jcart/js/jcart.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/material.min.js"></script>
+<script type="text/javascript" src="/js/ripples.min.js"></script>
 
 <script>
     $(document).ready(function () {
