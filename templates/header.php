@@ -21,7 +21,7 @@
     <title>EasyArt - Decoraci&oacuten Detalles y Dise&#209o</title>
 </head>
 <?php
-$estilo = json_decode(file_get_contents('http://localhost/easyapp/admin/estilos/actual'), true);
+$estilo = json_decode(file_get_contents('http://easyart.com.co/easyapp/admin/estilos/actual'), true);
 ?>
 <div class="container">
     <div class="brand"><img src="/easyart/img/logo.png" class="hidden-xs hidden-sm" width="30%" alt="EasyArt Decoraci&oacuten Detalles y Dise&#209o"></div>

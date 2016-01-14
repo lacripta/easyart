@@ -77,8 +77,8 @@ $config['paypal']['https'] = false;
 $config['paypal']['sandbox'] = false;
 
 // The URL a visitor is returned to after completing their PayPal transaction
-$config['paypal']['returnUrl'] = '';
+$config['paypal']['returnurl'] = '';
 
 // The URL of your PayPal IPN script
-$config['paypal']['notifyUrl'] = '';
+$config['paypal']['notifyurl'] = '';
 ?>

@@ -41,7 +41,7 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <?php
-                        $jsonfile = file_get_contents('http://localhost/easyapp/admin/producto/lista_orden');
+                        $jsonfile = file_get_contents('http://easyart.com.co/easyapp/admin/producto/lista_orden');
                         $productos = json_decode($jsonfile, true);
                         $first = true;
 
