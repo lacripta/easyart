@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p class="">Carrera 27 # 18 - 3 | Arauca, AR 81001 | 318.333.2323<br>Copyright &copy; Your Website 2014</p>
+                    <p class="">Carrera 27 # 19 - 51 | 318.372.5036 - 318.514.7918<br>ventas@easyart.com.co<br>Copyright &copy; EasyArt 2016</p>
                 </div>
             </div>
         </div>
