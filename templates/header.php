@@ -63,7 +63,7 @@ $estilo = json_decode(file_get_contents('http://easyart.com.co/easyapp/admin/est
         <!-- /.container -->
     </nav>
     <div class='botones-sociales derecha'>
-        <a class='itemsocial' href='' id='facebook-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
+        <a class='itemsocial' href='https://www.facebook.com/easyart.co' id='facebook-btn' target='_blank'><span class='social'><span class='texto'></span></span></a>
     </div>
 
 </div>
