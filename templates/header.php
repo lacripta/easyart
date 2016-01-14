@@ -24,7 +24,7 @@
 $estilo = json_decode(file_get_contents('http://easyart.com.co/easyapp/admin/estilos/actual'), true);
 ?>
 <div class="container">
-    <div class="brand"><img src="/img/logo.png" class="hidden-xs hidden-sm" width="30%" alt="EasyArt Decoraci&oacuten Detalles y Dise&#209o"></div>
+    <div class="brand"><img src="/img/logo.png" class="hidden-xs hidden-sm" width="50%" alt="EasyArt Decoraci&oacuten Detalles y Dise&#209o"></div>
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation" style="<?php echo $estilo[array_search("background-color", array_column($estilo, "estilo_nombre"))]["estilo_nombre"] . ":" . $estilo[array_search("background-color", array_column($estilo, "estilo_nombre"))]["estilo_valor"] . ";"; ?>">
         <div class="container">
